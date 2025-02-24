@@ -1,6 +1,10 @@
 import React from "react";
 
 function DisplayInfor({ listUser }) {
+  if (listUser.length === 0) {
+    return <div>No users available</div>;
+  }
+
   return (
     <div>
       {listUser.map((user) => (

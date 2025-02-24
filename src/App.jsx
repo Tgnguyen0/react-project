@@ -16,6 +16,15 @@ function App() {
   };
 
   const handleDeleteAllUsers = () => {
+    const nameInput = document.getElementById("name");
+    const ageInput = document.getElementById("age");
+
+    nameInput.value = "";
+    ageInput.value = "";
+
+    setName("");
+    setAge("");
+
     setListUser([]);
   };
 
@@ -31,6 +40,15 @@ function App() {
     setName("");
     setAge("");
   };
+
+  const handleEmptyObject = (listUser) => {
+    if (listUser.some((user) => !user.Name || !user.Age)) {
+      handleDeleteAllUsers();
+    }
+
+  };
+
+  handleEmptyObject(listUser);
 
   return (
     <div className="container mt-3 border h-auto" style={{ width: "400px" }}>
