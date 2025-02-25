@@ -101,8 +101,9 @@ function App() {
           </form>
 
           <InformationComponent
-            listUser={listUser}
-          />
+            // Biến được đặt trong lớp con như thế nào thì khi truyền từ cha sang con cũng như vậy
+            listUser={listUser} 
+          ></InformationComponent>
         </div>
       </div>
     </div>
